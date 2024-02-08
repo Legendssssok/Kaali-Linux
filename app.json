@@ -7,5 +7,10 @@
             "description": "Get your soon",
             "value":"828"
         }
-    }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
 }
