@@ -12,7 +12,7 @@
     "pyrogram"
     ],
     "env": {
-      "API_ID": {
+      "NGROK_TOKEN": {
         "description": "Get this value from https://my.telegram.org",
         "value": "",
         "required": true
