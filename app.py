@@ -1,13 +1,15 @@
-from aiohttp import web
+from flask import Flask, render_template, request
+from pyngrok import ngrok
 
-routes = web.RouteTableDef()
+app = Flask(__name__)
 
-@routes.get("/", allow_head=True)
-async def root_route_handler(request):
-    return web.json_response("iam_daxx")
+# Start ngrok when the Flask app starts
+ngrok_url = ngrok.connect(5000)
+print(" * Running on", ngrok_url)
 
+@app.route('/')
+def index():
+    return render_template('index.html', ngrok_url=ngrok_url)
 
-async def web_server():
-    web_app = web.Application(client_max_size=30000000)
-    web_app.add_routes(routes)
-    return web_app
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
