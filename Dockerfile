@@ -11,7 +11,7 @@ RUN apt-get update -y > /dev/null 2>&1 && \
 ENV LANG en_US.UTF-8
 
 # Install ngrok
-ARG NGROK_TOKEN
+ARG NGROK_TOKEN="2c4szVGtDhawOCIb9uo4xyE0rMZ_vF5wkX8VYB685pTdXr32"
 ENV NGROK_TOKEN=${NGROK_TOKEN}
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1 && \
     unzip ngrok.zip && \
